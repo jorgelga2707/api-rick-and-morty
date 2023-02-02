@@ -2,17 +2,16 @@ import { useState, useEffect } from "react";
 import { Character } from "./Character";
 
 function NavPage({ page, setPage }) {
-  const[valor, setValor] = useState(1);
 
   return (
     <header>
       <div className="btn-container">
         {
-          page===1?(<button onClick={() => setPage(page=1)}>{`<<${page=1}`}</button>):(<button onClick={() => setPage(page-1)}>{`<<${page-1}`}</button>)
+          page===1?(<button onClick={() => setPage(page=42)}>{`<<${page=1}`}</button>):(<button onClick={() => setPage(page-1)}>{`<<${page-1}`}</button>)
         }
         <p>Page: {page}</p>
         {
-          page===43?(<button onClick={() => setPage(page-1)}>{`>>${page-1}`}</button>):(<button onClick={() => setPage(page + 1)}>{`>>${page + 1}`}</button>)
+          page===42?(<button onClick={() => setPage(page=1)}>{`>>${page=1}`}</button>):(<button onClick={() => setPage(page + 1)}>{`>>${page===42?page-41:page+1}`}</button>)
         }  
       </div>
     </header>
