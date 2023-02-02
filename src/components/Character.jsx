@@ -2,7 +2,9 @@
     return(
         <div>
             <h3>{character.name}</h3>
-            <img src={character.image} alt="" />
+            <div className="img-container">
+                <img src={character.image} alt="" />
+            </div>
             <p>{`Origin:${character.origin && character.origin.name}`}</p>
         </div>
     )

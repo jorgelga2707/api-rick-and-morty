@@ -2,10 +2,19 @@ import { useState, useEffect } from "react";
 import { Character } from "./Character";
 
 function NavPage({ page, setPage }) {
+  const[valor, setValor] = useState(1);
+
   return (
     <header>
-      <p>Page: {page}</p>
-      <button onClick={() => setPage(page + 1)}>Page{page + 1}</button>
+      <div className="btn-container">
+        {
+          page===1?(<button onClick={() => setPage(page=1)}>{`<<${page=1}`}</button>):(<button onClick={() => setPage(page-1)}>{`<<${page-1}`}</button>)
+        }
+        <p>Page: {page}</p>
+        {
+          page===43?(<button onClick={() => setPage(page-1)}>{`>>${page-1}`}</button>):(<button onClick={() => setPage(page + 1)}>{`>>${page + 1}`}</button>)
+        }  
+      </div>
     </header>
   );
 }
@@ -35,10 +44,11 @@ export function CharacterList() {
       ) : (
         <div className="row">
           {characters.map((character) => (
-            <div className="col-md-4" key={character.id}>
+            <div className="column-3" key={character.id}>
               <Character
                 key={character.id}
                 name={character.name}
+                origin={character.origin}
                 image={character.image}
               />
             </div>
