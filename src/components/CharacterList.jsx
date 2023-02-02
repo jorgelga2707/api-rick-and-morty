@@ -7,7 +7,7 @@ function NavPage({ page, setPage }) {
     <header>
       <div className="btn-container">
         {
-          page===1?(<button onClick={() => setPage(page=42)}>{`<<${page=1}`}</button>):(<button onClick={() => setPage(page-1)}>{`<<${page-1}`}</button>)
+          page===1?(<button onClick={() => setPage(page=1)}>{`<<${page=1}`}</button>):(<button onClick={() => setPage(page-1)}>{`<<${page-1}`}</button>)
         }
         <p>Page: {page}</p>
         {
